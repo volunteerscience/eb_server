@@ -40,6 +40,10 @@ else {
         console.log('Process ' + process.pid + ' is listening to all incoming requests');
     });
     
+    app.get('/nifty', function(req, res) {
+       res.send("awesome!"); 
+    });
+    
     app.post('/reportPrice', function(req, res) {
         console.log("process " + process.pid + " handing request...");
         console.log('Report Price: ' + req.url);
