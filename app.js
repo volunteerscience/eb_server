@@ -14,7 +14,7 @@ var PORT = process.env.PORT || 3000;
 //exec(cmd, function(error, stdout, stderr) {
   // command output is in stdout
 //});
-console.log("now I am the master:"+cluster.isMaster + " env:" + process.env);
+console.log("now I am the master:"+cluster.isMaster + " env:" + JSON.stringify(process.env));
 if(cluster.isMaster) {
     var numWorkers = require('os').cpus().length;
 
