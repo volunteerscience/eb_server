@@ -10,6 +10,11 @@ var request = require('request');
 var vs_url = "https://volunteerscience.com/";
 var PORT = process.env.PORT || 3000;
 
+//var cmd = 'prince -v builds/pdf/book.html -o builds/pdf/book.pdf';
+//exec(cmd, function(error, stdout, stderr) {
+  // command output is in stdout
+//});
+console.log("now I am the master:"+cluster.isMaster + " env:" + process.env);
 if(cluster.isMaster) {
     var numWorkers = require('os').cpus().length;
 
@@ -20,6 +25,7 @@ if(cluster.isMaster) {
     }
 
     cluster.on('online', function(worker) {
+        var exec = require('child_process').exec;    
         console.log('Worker ' + worker.process.pid + ' is online');
     });
 
