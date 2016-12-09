@@ -41,7 +41,7 @@ else {
     });
     
     app.get('/nifty', function(req, res) {
-       res.send("awesome!"); 
+       res.send("kona"); 
     });
     
     app.post('/reportPrice', function(req, res) {
